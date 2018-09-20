@@ -1,5 +1,6 @@
 package reimu.weixia.th.dreamer.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
 import reimu.weixia.th.dreamer.R
@@ -20,8 +21,14 @@ class MyFragmentActivity : FragmentActivity() {
 
         var fragmentTransaction = supportFragmentManager.beginTransaction()
 
-        fragmentTransaction.add(R.id.fragment_view, MyFragment(), "MyFragment")
+        fragmentTransaction.add(R.id.fragment_view, MyFragment("Fragment_1"), "MyFragment")
+
+        fragmentTransaction.addToBackStack(null)
 
         fragmentTransaction.commit()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
