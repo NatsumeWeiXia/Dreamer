@@ -1,6 +1,7 @@
 package reimu.weixia.th.dreamer.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import kotlinx.android.synthetic.main.activity_viewpager_fragment.*
 import reimu.weixia.th.dreamer.R
@@ -10,6 +11,8 @@ import reimu.weixia.th.dreamer.R
  */
 
 class ViewPagerFragmentActivity : FragmentActivity() {
+
+    private val TAG = "VPFragmentActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +26,7 @@ class ViewPagerFragmentActivity : FragmentActivity() {
 
         var fragmentTransaction = supportFragmentManager.beginTransaction()
 
-        fragmentTransaction.add(MyFragment("Fragment Reimu"), "Reimu")
+        fragmentTransaction.add(MyFragment.getInstance("Fragment Reimu"), "Reimu")
 
         fragmentTransaction.addToBackStack("Reimu")
 
@@ -31,9 +34,9 @@ class ViewPagerFragmentActivity : FragmentActivity() {
 
         var fragmentTransaction2 = supportFragmentManager.beginTransaction()
 
-        fragmentTransaction2.add(MyFragment("Fragment Sun"), "Sun")
-        fragmentTransaction2.add(MyFragment("Fragment Moon"), "Moon")
-        fragmentTransaction2.add(MyFragment("Fragment Star"), "Star")
+        fragmentTransaction2.add(MyFragment.getInstance("Fragment Sun"), "Sun")
+        fragmentTransaction2.add(MyFragment.getInstance("Fragment Moon"), "Moon")
+        fragmentTransaction2.add(MyFragment.getInstance("Fragment Star"), "Star")
 
         fragmentTransaction2.addToBackStack("fairy")
 
@@ -44,5 +47,9 @@ class ViewPagerFragmentActivity : FragmentActivity() {
 
     override fun onStart() {
         super.onStart()
+    }
+
+    fun LogD(message: String) {
+        Log.d(TAG, message)
     }
 }
