@@ -3,7 +3,6 @@ package reimu.weixia.th.dreamer
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,10 +54,10 @@ class MainActivity : AppCompatActivity() {
         LogD("onDestroy")
     }
 
-    override fun onSaveInstanceState(outState: Bundle?, outPersistentState: PersistableBundle?) {
+    override fun onSaveInstanceState(outState: Bundle?) {
         LogD("onSaveInstanceState")
         outState!!.putString("Key", "Value")
-        super.onSaveInstanceState(outState, outPersistentState)
+        super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
