@@ -2,4 +2,5 @@
     <string name="app_name">Dreamer</string>
     <string name="change_Orientation">change_Orientation</string>
     <string name="go_viewpager_fragment_activity">go_viewpager_fragment_activity</string>
+    <string name="title_activity_thread">ThreadActivity</string>
 </resources>
