@@ -21,7 +21,7 @@ class MyFragmentActivity : FragmentActivity() {
 
         var fragmentTransaction = supportFragmentManager.beginTransaction()
 
-        fragmentTransaction.add(R.id.fragment_view, MyFragment("Fragment_1"), "MyFragment")
+        fragmentTransaction.add(R.id.fragment_view, MyFragment.getInstance("Fragment_1"), "MyFragment")
 
         fragmentTransaction.addToBackStack(null)
 
